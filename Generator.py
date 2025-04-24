@@ -1,72 +1,62 @@
 import json
+import os
+import shutil
+from datetime import datetime
+from CustomString import CustomString
+import xml.etree.ElementTree as ET
+import xml.dom.minidom
 
 
 class Generator:
     def __init__(self, skill_name):
         self.skill_name = skill_name
+        self.custom_string = CustomString(skill_name)
 
-    def append_effect(self, file_path, line_to_add):
-        with open(file_path, 'a', encoding='utf-8') as f:
+    def backup_file(self, file_name):
+        original = file_name
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        backup = f'swap_sb_tt.buffs_backup_{timestamp}.txt'
+        shutil.copy(original, backup)
+
+
+    def effect_file(self, count, file_name):
+        line_to_add = self.custom_string.effect_tooltip(count)
+        with open(file_name, 'a', encoding='utf-8') as f:
             f.write(line_to_add + '\n')
 
-    def effect_tooltip(self, count):
-        """
-        Generates a tooltip effect string for the given skill.
-
-        Args:
-            count (int): The number of tooltip effects to generate (though not used in the current implementation, it might be useful in future modifications).
-        Returns:
-            str: A formatted string representing the tooltip effect for the skill.
-        """
-        effects = (
-            f'effect: .name "{self.skill_name}_TooltipEffect{count}" .target "performer" '
-            f'.skill_instant true .buff_ids "{self.skill_name}_Tooltip{count}" '
-            f'.duration 3 .on_hit false .on_miss false'
-        )
-        return effects
-
-    def buff_tooltip(self, count):
-        """
-        Generates a tooltip effect string for the given skill.
-
-        Args:
-            count (int): The number of tooltip effects to generate (though not used in the current implementation, it might be useful in future modifications).
-        Returns:
-            str: A formatted string representing the tooltip effect for the skill.
-        """
-        data = {
-            "id": f"{self.skill_name}_Tooltip{count}",
-            "stat_type": "upgrade_discount",
-            "stat_sub_type": f"Loc_{self.skill_name}_Tooltip{count}",
-            "amount": 5,
-            "remove_if_not_active": False,
-            "rule_type": "always",
-            "is_false_rule": False,
-            "rule_data": {
-                "float": 0,
-                "string": ""
-            }
-        }
-
-        json_data = json.dumps(data, indent=2)
-        return json_data
-
-    def loc_tooltip(self, count, description):
-        """
-        Generates a tooltip effect string for the given skill.
-
-        Args:
-            count (int): The number of tooltip effects to generate (though not used in the current implementation, it might be useful in future modifications).
-        Returns:
-            str: A formatted string representing the tooltip effect for the skill.
-        """
-        loc = f'<entry id="buff_stat_tooltip_upgrade_discount_Loc_{self.skill_name}_Tooltip{count}"><![CDATA[{description}]]></entry>'
-        print(loc)
+    def buff_file(self, count, file_name):
+        self.backup_file(file_name)
 
 
+        with open(file_name, 'r') as file:
+            data = json.load(file)
+
+        buffsList = data['buffs']
+        buffsList.append(self.custom_string.buff_tooltip(count))
+
+        with open(file_name, 'w') as file:
+            json.dump(data, file, indent=4)
 
 
-test = Generator('LashGift')
-# tooltip_effects = test.effects_tooltip('1A')
+    def loc_file(self, count, description, file_name):
+        self.backup_file(file_name)
 
-test.loc_tooltip('1A', 'cooldown')
+        string_to_add = self.custom_string.loc_tooltip(count, description)
+
+        tree = ET.parse(file_name)
+        tree_root = tree.getroot()
+        tree_lang_elem = tree_root.find(".//language[@id='english']")
+
+        appended_entry = ET.fromstring(string_to_add)
+        tree_lang_elem.append(appended_entry)
+
+        xml_to_string = ET.tostring(tree_root, encoding="utf-8")
+        xml_parsed_string = xml.dom.minidom.parseString(xml_to_string)
+
+
+        dom_string = xml_parsed_string.toprettyxml()
+        dom_string = os.linesep.join([s for s in dom_string.splitlines() if s.strip()])
+        with open('swap_sb.string_table.xml', 'w', encoding="utf-8") as f:
+            f.write(dom_string)  
+
+

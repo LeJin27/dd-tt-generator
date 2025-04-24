@@ -1,0 +1,160 @@
+{
+    "buffs": [
+        {
+            "id": "TT_swap_sb_RIPOSTE_Activation",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_activation",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE_Trigger",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_trigger",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE1",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_1",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE2",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_2",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE3",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_3",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE4",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_4",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE5",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_5",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE_Stat_1",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_stat_1",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE_Stat_2",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_stat_2",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE_Stat_3",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_stat_3",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE_Stat_4",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_stat_4",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        },
+        {
+            "id": "TT_swap_sb_RIPOSTE_Stat_5",
+            "stat_type": "upgrade_discount",
+            "stat_sub_type": "TT_swap_sb_RIPOSTE_stat_5",
+            "amount": 0,
+            "remove_if_not_active": false,
+            "rule_type": "always",
+            "is_false_rule": false,
+            "rule_data": {
+                "float": 0,
+                "string": ""
+            }
+        }
+    ]
+}
