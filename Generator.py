@@ -13,11 +13,15 @@ class Generator:
 
     def backup_file(self, file_name):
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    
-        base = os.path.splitext(file_name)[0]
-        backup = f"{base}_backup_{timestamp}.txt"
-    
-        shutil.copy(file_name, backup)
+
+        backup_dir = "backup"
+        os.makedirs(backup_dir, exist_ok=True)
+
+        base = os.path.splitext(os.path.basename(file_name))[0]
+        backup_path = os.path.join(backup_dir, f"{base}_backup_{timestamp}.txt")
+
+        shutil.copy(file_name, backup_path)
+
 
 
     def effect_file(self, skill_name, tt_ext, file_name):
