@@ -25,9 +25,10 @@ class Generator:
 
 
     def effect_file(self, skill_name, tt_ext, file_name):
+        self.backup_file(file_name)
         line_to_add = self.custom_string.effect_tooltip(skill_name, tt_ext)
         with open(file_name, 'a', encoding='utf-8') as f:
-            f.write(line_to_add + '\n')
+            f.write('\n' + line_to_add + '\n')
 
     def buff_file(self, skill_name, tt_ext, file_name):
         self.backup_file(file_name)
