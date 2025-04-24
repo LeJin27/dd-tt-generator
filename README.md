@@ -14,5 +14,6 @@
 - Description is used in localization
 - Clicking confirm will perform process of appending to files
 - Backup of the files will be created in the folder next to CTT.exe
+- compiled with pyinstaller --onefile --windowed gui.py    
 
 

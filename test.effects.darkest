@@ -1,5 +1,0 @@
-effect: .name "swap_sb_back_1" .target "performer" .push 1 .chance 5000% .on_hit true .on_miss true .can_apply_on_death true
-effect: .name "Test_TooltipEffect4A" .target "performer" .skill_instant true .buff_ids "Test_Tooltip4A" .duration 3 .on_hit false .on_miss false
-effect: .name "Test_TooltipEffect4A" .target "performer" .skill_instant true .buff_ids "Test_Tooltip4A" .duration 3 .on_hit false .on_miss false
-effect: .name "Dragon_TooltipEffect4A" .target "performer" .skill_instant true .buff_ids "Dragon_Tooltip4A" .duration 3 .on_hit false .on_miss false
-effect: .name "Doom_TooltipEffect4A" .target "performer" .skill_instant true .buff_ids "Doom_Tooltip4A" .duration 3 .on_hit false .on_miss false
