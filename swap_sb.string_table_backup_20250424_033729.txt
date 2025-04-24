@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<root>
+
+	<language id="english">
+
+		<entry id="buff_stat_tooltip_upgrade_discount_TT_swap_sb_RIPOSTE_activation">Activates {colour_start|debuff}Riposte{colour_end}</entry>
+
+
+	</language>
+
+</root>

@@ -5,7 +5,5 @@
 		<entry id="buff_stat_tooltip_upgrade_discount_Loc_skill_name_Tooltip1A">cooliosis</entry>
 		<entry id="buff_stat_tooltip_upgrade_discount_Loc_skill_name_Tooltip1A">cooliosis</entry>
 		<entry id="buff_stat_tooltip_upgrade_discount_Loc_skill_name_Tooltip1A">cooliosis</entry>
-		<entry id="buff_stat_tooltip_upgrade_discount_Loc_Testtee_Tooltipeatea"/>
-		<entry id="buff_stat_tooltip_upgrade_discount_Loc_Testtee_Tooltipeatea"> </entry>
 	</language>
 </root>
