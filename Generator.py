@@ -13,18 +13,20 @@ class Generator:
         self.custom_string = CustomString(skill_name)
 
     def backup_file(self, file_name):
-        original = file_name
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        backup = f'swap_sb_tt.buffs_backup_{timestamp}.txt'
-        shutil.copy(original, backup)
+    
+        base = os.path.splitext(file_name)[0]
+        backup = f"{base}_backup_{timestamp}.txt"
+    
+        shutil.copy(file_name, backup)
 
 
-    def effect_file(self, count, file_name):
-        line_to_add = self.custom_string.effect_tooltip(count)
+    def effect_file(self, tt_ext, file_name):
+        line_to_add = self.custom_string.effect_tooltip(tt_ext)
         with open(file_name, 'a', encoding='utf-8') as f:
             f.write(line_to_add + '\n')
 
-    def buff_file(self, count, file_name):
+    def buff_file(self, tt_ext, file_name):
         self.backup_file(file_name)
 
 
@@ -32,16 +34,16 @@ class Generator:
             data = json.load(file)
 
         buffsList = data['buffs']
-        buffsList.append(self.custom_string.buff_tooltip(count))
+        buffsList.append(self.custom_string.buff_tooltip(tt_ext))
 
         with open(file_name, 'w') as file:
             json.dump(data, file, indent=4)
 
 
-    def loc_file(self, count, description, file_name):
+    def loc_file(self, tt_ext, description, file_name):
         self.backup_file(file_name)
 
-        string_to_add = self.custom_string.loc_tooltip(count, description)
+        string_to_add = self.custom_string.loc_tooltip(tt_ext, description)
 
         tree = ET.parse(file_name)
         tree_root = tree.getroot()
@@ -53,10 +55,15 @@ class Generator:
         xml_to_string = ET.tostring(tree_root, encoding="utf-8")
         xml_parsed_string = xml.dom.minidom.parseString(xml_to_string)
 
-
         dom_string = xml_parsed_string.toprettyxml()
         dom_string = os.linesep.join([s for s in dom_string.splitlines() if s.strip()])
-        with open('swap_sb.string_table.xml', 'w', encoding="utf-8") as f:
+        with open(file_name, 'w', encoding="utf-8") as f:
             f.write(dom_string)  
 
 
+def main(): 
+    test = Generator('swap_sb_Riposte')
+    test.loc_file('1A', 'cooliosis', 'swap_sb.string_table.xml')
+
+if __name__ == "__main__":
+    main()
