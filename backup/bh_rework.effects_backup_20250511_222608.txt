@@ -1,0 +1,9 @@
+effect: .name "bh_rework_dmg_vs_lowhp_1" .target "performer" .chance 100% .on_hit true .on_miss false .skill_instant true .buff_ids "BH_DMGL_VS_LOWHP_1" "BH_DMGH_VS_LOWHP_1" "BH_FINISH_CRIT_6_TARGET_HP_LT_50"
+effect: .name "bh_rework_dmg_vs_lowhp_2" .target "performer" .chance 100% .on_hit true .on_miss false .skill_instant true .buff_ids "BH_DMGL_VS_LOWHP_2" "BH_DMGH_VS_LOWHP_2" "BH_FINISH_CRIT_6_TARGET_HP_LT_50"
+effect: .name "bh_rework_dmg_vs_lowhp_3" .target "performer" .chance 100% .on_hit true .on_miss false .skill_instant true .buff_ids "BH_DMGL_VS_LOWHP_3" "BH_DMGH_VS_LOWHP_3" "BH_FINISH_CRIT_6_TARGET_HP_LT_50"
+effect: .name "bh_rework_dmg_vs_lowhp_4" .target "performer" .chance 100% .on_hit true .on_miss false .skill_instant true .buff_ids "BH_DMGL_VS_LOWHP_4" "BH_DMGH_VS_LOWHP_4" "BH_FINISH_CRIT_6_TARGET_HP_LT_50"
+effect: .name "bh_rework_dmg_vs_lowhp_5" .target "performer" .chance 100% .on_hit true .on_miss false .skill_instant true .buff_ids "BH_DMGL_VS_LOWHP_5" "BH_DMGH_VS_LOWHP_5" "BH_FINISH_CRIT_6_TARGET_HP_LT_50"
+
+effect: .name "bh_rework_fake_poison" .target "performer" .chance 0% .dotPoison 1 .duration 1 .on_hit false .on_miss false .has_description false
+effect: .name "bh_rework_fake_poison_cd" .target "performer" .chance 100% .buff_ids "bh_rework_fake_poison_cd" .duration 3 .on_hit true .on_miss true .buff_is_clear_debuff_valid false .has_description false
+effect: .name "bh_rework_fake_poison_tray" .target "performer" .chance 100% .buff_ids "bh_rework_fake_poison_tray" .duration 3 .on_hit true .on_miss true .buff_is_clear_debuff_valid false .has_description false

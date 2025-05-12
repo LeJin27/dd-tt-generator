@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<root>
+	<language id="english">
+		<entry id="buff_stat_tooltip_upgrade_discount_bh_rework_caltrops_cd_tt">{colour_start|notable}Cooldown: 1 rds{colour_end}</entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_bh_rework_caltrops_cd_tt">{colour_start|notable}Cooldown: 1 rds{colour_end}</entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_bh_rework_caltrops_cd_tt">{colour_start|notable}Cooldown: 1 rds{colour_end}</entry>
+	</language>
+</root>

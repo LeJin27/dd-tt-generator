@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<root>
+	<language id="english">
+		<entry id="buff_stat_tooltip_upgrade_discount_test">test</entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_ee">test</entry>
+	</language>
+</root>
